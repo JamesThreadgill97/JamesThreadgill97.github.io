@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1e1e2f;
+    color: #fff;
+  }
+  a {
+    color: #00bcd4;
+    margin: 0.5em;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
