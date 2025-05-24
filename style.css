@@ -69,3 +69,9 @@ body {
     transform: scale(1.2);
     color: #00e5ff;
   }
+  .header-img {
+    max-width: 300px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+  }
