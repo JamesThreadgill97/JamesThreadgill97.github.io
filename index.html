@@ -4,64 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>jpgt Homepage</title>
-  <link rel="icon" href="/assets/jt_favicon.png" type="image/x-icon">
+  <link rel="icon" href="assets/jt_favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <img src="assets/anime_header.png" alt="Anime Header" class="header-img">
-  <div id="clock"></div>
+  <!-- 🌸 Sakura Animation Canvas -->
+  <canvas id="sakura-canvas"></canvas>
 
-  <!-- 🔍 Search Input -->
-  <input
-    id="custom-search"
-    type="text"
-    placeholder="Whatcha looking for?"
-    autofocus
-    onkeydown="handleSearch(event)"
-  >
+  <!-- 📦 Main Content -->
+  <main>
+    <!-- 🖼️ Header Image -->
+    <img src="assets/anime_header.png" alt="Anime Header" class="header-img">
 
-  <div class="icon-links">
-    <a href="https://www.google.com" title="Google"><i class="fab fa-google"></i></a>
-    <a href="https://www.github.com" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://gmail.com" title="GMail"><i class="fas fa-envelope"></i></a>
-    <a href="https://reddit.com" title="Reddit"><i class="fab fa-reddit"></i></a>
-  </div>
+    <!-- 🕒 Clock -->
+    <div id="clock"></div>
 
-  <!-- 🔧 JavaScript -->
-  <script>
-    // Ensure focus is applied after page load
-    window.onload = () => {
-      document.getElementById('custom-search')?.focus();
-    };
+    <!-- 🔈 Mute Toggle -->
+    <button id="mute-toggle">🔈</button>
 
-    function handleSearch(event) {
-      if (event.key === 'Enter') {
-        const query = event.target.value.trim();
-        if (query) {
-          const urlPattern = /^https?:\/\//i;
-          if (urlPattern.test(query)) {
-            window.location.href = query;
-          } else {
-            window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
-          }
-        }
-      }
-    }
-  </script>
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      const time = `${hours}:${minutes}:${seconds}`;
-      document.getElementById('clock').textContent = time;
-    }
+    <!-- 🔍 Search Input -->
+    <input
+      id="custom-search"
+      type="text"
+      placeholder="Whatcha looking for?"
+      autofocus
+      onkeydown="handleSearch(event)"
+    >
+
+    <!-- 🔗 Quick Links -->
+    <div class="icon-links">
+      <a href="https://www.google.com" title="Google"><i class="fab fa-google"></i></a>
+      <a href="https://www.github.com" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://gmail.com" title="GMail"><i class="fas fa-envelope"></i></a>
+      <a href="https://reddit.com" title="Reddit"><i class="fab fa-reddit"></i></a>
+    </div>
+  </main>
+
+  <!-- 🔊 Background Audio
+  <audio id="bg-music" autoplay loop>
+    <source src="assets/lofi.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio> -->
+  <div id="yt-player-container" style="display:none;"></div>
+
   
-    setInterval(updateClock, 1000);
-    updateClock(); // Initial call
-  </script>
+  <!-- 📜 Scripts -->
+  <script src="script.js"></script>
+
+
 </body>
 </html>
-

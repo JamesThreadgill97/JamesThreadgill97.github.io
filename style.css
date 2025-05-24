@@ -11,6 +11,7 @@ body {
     padding: 1rem;
     box-sizing: border-box;
     text-align: center;
+    cursor: url('assets/pixel_star_cursor.cur') 0 0, auto;
   }
   
   h1 {
@@ -54,13 +55,15 @@ body {
   }
   .icon-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     justify-content: center;
     margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
   }
   
   .icon-links a {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #00bcd4;
     transition: transform 0.2s ease, color 0.2s ease;
   }
@@ -81,4 +84,36 @@ body {
     margin-top: 1rem;
     color: #a6accd; 
     font-family: 'Fira Code', monospace;
+  }
+  #sakura-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* #yt-audio {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+  } */
+  #mute-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #a6accd; /* soft Catppuccin lavender */
+    margin: 1rem 0;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  #mute-toggle:hover {
+    color: #00e5ff;
+    transform: scale(1.2);
+  }
+  
+  #mute-toggle:focus {
+    outline: none;
   }
