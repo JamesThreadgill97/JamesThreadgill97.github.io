@@ -76,9 +76,9 @@ body {
     box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
   }
   #clock {
-    font-size: 2rem;
+    font-size: 5rem;
     font-weight: 500;
     margin-top: 1rem;
-    color: #a6accd; /* Soft Catppuccin-like tone */
+    color: #a6accd; 
     font-family: 'Fira Code', monospace;
   }
