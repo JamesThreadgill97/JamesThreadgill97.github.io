@@ -20,7 +20,7 @@
     autofocus
     onkeydown="handleSearch(event)"
   >
-
+  <div id="clock"></div>
   <div class="icon-links">
     <a href="https://www.google.com" title="Google"><i class="fab fa-google"></i></a>
     <a href="https://www.github.com" title="GitHub"><i class="fab fa-github"></i></a>
@@ -48,6 +48,19 @@
         }
       }
     }
+  </script>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const time = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('clock').textContent = time;
+    }
+  
+    setInterval(updateClock, 1000);
+    updateClock(); // Initial call
   </script>
 </body>
 </html>
