@@ -52,4 +52,20 @@ body {
     border-color: #00e5ff;
     background-color: #33334d;
   }
+  .icon-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
   
+  .icon-links a {
+    font-size: 2rem;
+    color: #00bcd4;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .icon-links a:hover {
+    transform: scale(1.2);
+    color: #00e5ff;
+  }
