@@ -8,12 +8,43 @@ body {
     margin: 0;
     background-color: #1e1e2f;
     color: #fff;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
   }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
   a {
     color: #00bcd4;
     margin: 0.5em;
     text-decoration: none;
+    font-size: 1.1rem;
   }
+  
   a:hover {
     text-decoration: underline;
   }
+  
+  #custom-search {
+    width: 100%;
+    max-width: 600px;
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+    margin: 1.5rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #2e2e3e;
+    color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 2px #00bcd4 inset;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  #custom-search:focus {
+    box-shadow: 0 0 0 2px #00e5ff inset;
+  }
+  
