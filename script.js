@@ -10,7 +10,7 @@ function handleSearch(event) {
     const query = event.target.value.trim();
     if (query) {
       const urlPattern = /^https?:\/\//i;
-      const domainPattern = /^[\w.-]+\.(com|co\.uk)(\/.*)?$/i;
+      const domainPattern = /^[\w.-]+\.(com|co\.uk|net)(\/.*)?$/i;
 
       if (urlPattern.test(query)) {
         window.location.href = query;
