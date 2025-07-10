@@ -5,19 +5,23 @@ window.onload = () => {
   };
   
   // 🔍 Handle search bar Enter key
-  function handleSearch(event) {
-    if (event.key === 'Enter') {
-      const query = event.target.value.trim();
-      if (query) {
-        const urlPattern = /^https?:\/\//i;
-        if (urlPattern.test(query)) {
-          window.location.href = query;
-        } else {
-          window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
-        }
+function handleSearch(event) {
+  if (event.key === 'Enter') {
+    const query = event.target.value.trim();
+    if (query) {
+      const urlPattern = /^https?:\/\//i;
+      const domainPattern = /^[\w.-]+\.(com|co\.uk)(\/.*)?$/i;
+
+      if (urlPattern.test(query)) {
+        window.location.href = query;
+      } else if (domainPattern.test(query)) {
+        window.location.href = 'https://' + query;
+      } else {
+        window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
       }
     }
   }
+}
   
   // 🕒 Live clock
   function updateClock() {
